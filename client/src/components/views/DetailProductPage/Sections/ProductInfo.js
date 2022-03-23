@@ -18,7 +18,7 @@ function ProductInfo(props) {
 
     return (
         <div>
-            <Descriptions title="Product Info">
+            {/* <Descriptions title="Product Info">
                 <Descriptions.Item label="Price"> {Product.price}</Descriptions.Item>
                 <Descriptions.Item label="Sold">{Product.sold}</Descriptions.Item>
                 <Descriptions.Item label="View"> {Product.views}</Descriptions.Item>
@@ -34,9 +34,11 @@ function ProductInfo(props) {
                 >
                     Add to Cart
                     </Button>
-            </div>
+            </div> */}
         </div>
     )
 }
 
 export default ProductInfo
+
+//phase 

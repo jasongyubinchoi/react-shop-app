@@ -31,7 +31,7 @@ function DetailProductPage(props) {
 
             <br />
 
-            <Row gutter={[16, 16]} >
+            {/* <Row gutter={[16, 16]} >
                 <Col lg={12} xs={24}>
                     <ProductImage detail={Product} />
                 </Col>
@@ -40,9 +40,11 @@ function DetailProductPage(props) {
                         addToCart={addToCartHandler}
                         detail={Product} />
                 </Col>
-            </Row>
+            </Row> */}
         </div>
     )
 }
 
 export default DetailProductPage
+
+//phase
