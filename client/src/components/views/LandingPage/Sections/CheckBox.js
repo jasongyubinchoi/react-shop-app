@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Checkbox, Collapse } from 'antd';
-
+import { Icon, Col, Card, Row } from "antd";
 const { Panel } = Collapse
 
 

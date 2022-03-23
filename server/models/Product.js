@@ -21,7 +21,37 @@ const productSchema = mongoose.Schema({
         type: Array,
         default: []
     },
-    continents: {
+    lengths: {
+        type: Number,
+        default: 1
+    },
+    services: {
+        type: Number,
+        default: 1
+    },
+    environments: {
+        type: Number,
+        default: 1
+    },ratings: {
+        type: Number,
+        default: 1
+    },shapes: {
+        type: Number,
+        default: 1
+    },types: {
+        type: Number,
+        default: 1
+    },shapes: {
+        type: Number,
+        default: 1
+    },enhancementExtensions: {
+        type: Number,
+        default: 1
+    },nailArts: {
+        type: Number,
+        default: 1
+    },
+    locations: {
         type: Number,
         default: 1
     },

@@ -16,12 +16,143 @@ const Continents = [
     { key: 7, value: "Antarctica" }
 ]
 
+const lengths = [
+    {key: 1,
+    value: "Short"
+    },
+    {key:2,
+    value:"Medium"},
+    {key: 3,
+    value: "Long"
+    },
+    {key:4,
+    value:"Extra Long"}
+]
+const locations = [
+    {
+        key : 1,
+        value: "Within 5 miles"
+
+    },
+    {
+        key : 2,
+        value: "Within 5 to 10 miles"
+
+    },
+    {
+        key : 3,
+        value: "Within 10 to 25 miles"
+
+    }
+] 
+const environments = [
+    {key: 1,
+    value: "Salon"
+    },
+    {key:2,
+    value:"Mobile"},
+    {key: 3,
+    value: "Salon Suite"
+    },
+    {key:4,
+    value:"Home-based"}
+]
+const ratings = [
+    {key: 1,
+    value: "⭐"
+    },
+    {key:2,
+    value:"⭐⭐"},
+    {key: 3,
+    value: "⭐⭐⭐"
+    },
+    {key:4,
+    value:"⭐⭐⭐⭐"},
+    {key:5,
+    value:"⭐⭐⭐⭐⭐"}
+]
+const shapes = [
+    {key: 1,
+    value: "Coffin"
+    },
+    {key:2,
+    value:"Almond"},
+    {key: 3,
+    value: "Square"
+    },
+    {key:4,
+    value:"Stiletto"},
+    {
+        key:5,
+        value:"Ballerina"
+    }
+]
+
+const types = [
+    {key: 1,
+    value: "Hard Gel"
+    },
+    {key:2,
+    value:"Acrylic"},
+    {key: 3,
+    value: "Polygel"
+    },
+    {key:4,
+    value:"Soft Gel"},
+    {
+    key:5,
+    value:"Dip Powder"
+    },
+    {
+    key:6,
+    value:"Gel-X"
+        }
+]
+const enhancementExtensions = [
+    {key: 1,
+    value: "Sculpting Forms"
+    },
+    {key:2,
+    value:"Tips"},
+    {key: 3,
+    value: "Cruved Tips"
+    },
+    {key:4,
+    value:"Dual"}
+]
+const services = [
+    {key: 1,
+    value: "Natural Nail Care"
+    },
+    {key:2,
+    value:"Pedicure"},
+    {key: 3,
+    value: "Artificial Nail Enhancements"
+    }
+]
+const nailArts = [
+    {key: 1,
+    value: "Gel Polish"
+    },
+    {key:2,
+    value:"Regular Polish"}
+]
+
 export class UploadProductPage extends Component {
 
     state = {
         title: '',
         description: '',
         continents: 1,
+        lengths: 1,
+        locations: 1,
+        environments: 1,
+        ratings: 1,
+        shapes: 1,
+        types: 1,
+        enhancementExtensions: 1,
+        services: 1,
+        nailarts: 1,
         images: [],
         price: 0
     }
@@ -42,6 +173,35 @@ export class UploadProductPage extends Component {
     handleChangeContinents = (event) => {
         this.setState({ continents: event.currentTarget.value })
     }
+    handleChangeLengths = (event) => {
+        this.setState({ lengths: event.currentTarget.value })
+    }
+    handleChangeLocations = (event) => {
+        this.setState({ locations: event.currentTarget.value })
+    }
+    handleChangeEnvironments = (event) => {
+        this.setState({ environments: event.currentTarget.value })
+    }
+    handleChangeRatings = (event) => {
+        this.setState({ ratings: event.currentTarget.value })
+    }
+    handleChangeShapes = (event) => {
+        this.setState({ shapes: event.currentTarget.value })
+    }
+    handleChangeTypes = (event) => {
+        this.setState({ types: event.currentTarget.value })
+    }
+    handleChangeEnhancementExtensions = (event) => {
+        this.setState({ enhancementExtensions: event.currentTarget.value })
+    }
+    handleChangeServices = (event) => {
+        this.setState({ services: event.currentTarget.value })
+    }
+    handleChangeNailArts = (event) => {
+        this.setState({ nailArts: event.currentTarget.value })
+    }
+    
+
 
     onSubmit = (event) => {
         event.preventDefault();
@@ -62,7 +222,16 @@ export class UploadProductPage extends Component {
             description: this.state.description,
             images: this.state.images,
             continents: this.state.continents,
-            price: this.state.price
+            price: this.state.price,
+            lengths: this.state.lengths,
+            locations: this.state.locations,
+            environments: this.state.environments,
+            ratings: this.state.ratings,
+            shapes: this.state.shapes,
+            types: this.state.types,
+            enhancementExtension: this.state.enhancementExtension,
+            services: this.state.services,
+            nailarts: this.state.nailarts
         }
 
         axios.post('/api/product/uploadProduct', variables)
@@ -116,6 +285,51 @@ export class UploadProductPage extends Component {
                 <br /><br />
                 <select onChange={this.handleChangeContinents}>
                     {Continents.map(item => (
+                        <option key={item.key} value={item.key}>{item.value}</option>
+                    ))}
+                </select>
+                <select onChange={this.handleChangeLengths}>
+                    {lengths.map(item => (
+                        <option key={item.key} value={item.key}>{item.value}</option>
+                    ))}
+                </select>
+                <select onChange={this.handleChangeLocations}>
+                    {locations.map(item => (
+                        <option key={item.key} value={item.key}>{item.value}</option>
+                    ))}
+                </select>
+                <select onChange={this.handleChangeEnvironments}>
+                    {environments.map(item => (
+                        <option key={item.key} value={item.key}>{item.value}</option>
+                    ))}
+                </select>
+                <select onChange={this.handleChangeRatings}>
+                    {ratings.map(item => (
+                        <option key={item.key} value={item.key}>{item.value}</option>
+                    ))}
+                </select>
+                <select onChange={this.handleChangeShapes}>
+                    {shapes.map(item => (
+                        <option key={item.key} value={item.key}>{item.value}</option>
+                    ))}
+                </select>
+                <select onChange={this.handleChangeTypes}>
+                    {types.map(item => (
+                        <option key={item.key} value={item.key}>{item.value}</option>
+                    ))}
+                </select>
+                <select onChange={this.handleChangeEnhancementExtensions}>
+                    {enhancementExtensions.map(item => (
+                        <option key={item.key} value={item.key}>{item.value}</option>
+                    ))}
+                </select>
+                <select onChange={this.handleChangeServices}>
+                    {services.map(item => (
+                        <option key={item.key} value={item.key}>{item.value}</option>
+                    ))}
+                </select>
+                <select onChange={this.handleChangeNailArts}>
+                    {nailArts.map(item => (
                         <option key={item.key} value={item.key}>{item.value}</option>
                     ))}
                 </select>
